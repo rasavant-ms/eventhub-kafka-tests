@@ -1,0 +1,1 @@
+﻿select * into Output from Input

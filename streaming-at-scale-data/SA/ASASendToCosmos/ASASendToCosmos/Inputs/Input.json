@@ -1,0 +1,25 @@
+﻿{
+  "Sample": "{\"data\": \"14\", \"time\": \"2018-12-08_00:20:52.9409\", \"id\":\"bd0901db-e694-455f-966b-1ab51f80f619\"}",
+  "EventHubProperties": {
+    "ConsumerGroupName": "streamanalytics",
+    "EventHubName": "kafkatest32",
+    "ServiceBusNamespace": "eh2ehtesting",
+    "SharedAccessPolicyKey": null,
+    "SharedAccessPolicyName": "RootManageSharedAccessKey"
+  },
+  "BlobStorageProperties": null,
+  "IoTHubProperties": null,
+  "BlobReferenceProperties": null,
+  "DataSourceCredentialDomain": "4fbb2d47-449c-4e7b-a0f2-d8a8a23e5dbd.StreamAnalyticsCredential",
+  "Name": "Input",
+  "Type": "Data Stream",
+  "DataSourceType": "Event Hub",
+  "Serialization": {
+    "Encoding": "UTF8",
+    "Type": "Json",
+    "FieldDelimiter": null,
+    "Format": null
+  },
+  "CompresssionType": "None",
+  "ScriptType": "Input"
+}
