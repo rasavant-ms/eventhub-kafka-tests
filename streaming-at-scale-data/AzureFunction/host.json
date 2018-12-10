@@ -1,0 +1,15 @@
+{
+  "version": "2.0",
+  "eventHub": {
+    "maxBatchSize": 64,
+    "prefetchCount": 256,
+    "batchCheckpointFrequency": 1
+  },
+  "logging": {
+    "fileLoggingMode": "debugOnly",
+    "logLevel": {
+      "Function.SendToCosmosDB": "Debug",
+      "default": "None"
+    }
+  }
+  }
