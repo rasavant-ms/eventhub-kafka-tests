@@ -31,10 +31,6 @@ namespace ReadEventHubs
             log.LogInformation("Event Hub batch size - " + eventHubData.Length.ToString());
 
             List<Task> tasks = new List<Task>();
-            log.LogDebug($"This is debug message");
-            log.LogTrace("This is trace message");
-            log.LogWarning("This is warning message");
-            log.LogError("This is error message");
             foreach (EventData message in eventHubData)
             {
                 //log.LogInformation($"Description={Encoding.UTF8.GetString(message.Body.Array)}");
