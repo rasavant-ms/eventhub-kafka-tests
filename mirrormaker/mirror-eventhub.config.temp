@@ -1,0 +1,8 @@
+# Event Hubs Kafka endpoint
+bootstrap.servers=$EVENTHUB_FQDN:$EVENTHUB_PORT
+client.id=mirror_maker_producer
+
+# Event Hubs requires secure communication
+sasl.mechanism=PLAIN
+security.protocol=SASL_SSL
+sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password=$EVENTHUB_CONNECTION_STRING;

@@ -1,0 +1,5 @@
+#Simple Kafka set up
+bootstrap.servers=$SOURCE_SERVER:$SOURCE_PORT
+client.id=mirror_maker_consumer
+group.id=example-mirrormaker-group
+exclude.internal.topics=true

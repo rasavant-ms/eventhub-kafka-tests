@@ -1,0 +1,32 @@
+apiVersion: extensions/v1beta
+kind: Deployment
+metadata:
+  name: mirrormaker
+  labels:
+    purpose: run-mirrormaker
+spec:
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+      - name: kafkamm
+        image: docker.io/rasavant/kafkamm
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: <Port>
+        env:
+        - name: EVENTHUB_FQDN
+          value: "aks-rgcc-ehubns.servicebus.windows.net"
+        - name: EVENTHUB_PORT
+          value: "9093"
+        - name: EVENTHUB_PORT
+          value: "9093"
+    

@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mm-cm
+data:
+  EVENTHUB_FQDN: ""
+  EVENTHUB_PORT: "9093"
+  EVENTHUB_CONNECTION_STRING: ""
+  SOURCE_SERVER: ""
+  SOURCE_PORT: "9092"
+
