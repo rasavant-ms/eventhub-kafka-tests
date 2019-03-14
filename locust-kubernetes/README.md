@@ -1,3 +1,5 @@
+README.md obtained from https://github.com/karol-brejna-i/locust-experiments.git - updated a bit with changes
+
 ## Setting up Kafka
 This descriptors rely on Debezium images for Kafka and Zookeeper.
 
@@ -15,7 +17,7 @@ service "zookeeper" created
 ```
 
 ## Updated Locust docker image
-Some time ago I created and published small, [general purpose Locust image](https://hub.docker.com/r/grubykarol/locust/) (ATTOW the latest version is 0.8.1-py3.6)
+Some time ago I created and published small, [general purpose Locust image](https://hub.docker.com/r/rasavant/locust/tags) (ATTOW the latest version is 0.9.0-py3.6-kafka3)
 
 For this exercise, I decided to extend the image by installing `kafka-python` library there.
 
@@ -24,13 +26,7 @@ See [docker-kafka-python](../docker-kafka-python) for details.
 ## Locust descriptors
 [The scripts](locust) are based on [previous experiment](https://medium.com/locust-io-experiments/locust-io-experiments-running-in-kubernetes-95447571a550).
 
-I introduced few changes:
-
-* the scripts use Locust image tagged 0.8.1-py3.6-kafka (so you need to build it in advance)
-* all file names got `locust-` prefix
-* `--print-stats` got removed - it was too noisy
-* new environment variable was introduced (`QUIET_MODE`) so the scripts can decide (based on its value) on the verbosity of logging 
-* new environment variable was introduced (`TASK_DELAY`) which the scripts can use to set up delay between tasks
+* the scripts use Locust image tagged 0.9.0-py3.6-kafka3 (so you need to build it in advance)
 
 ## Updating configmap with latest version of scripts
 This version of deployment scripts assumes that Locust test code is stored in a dedicated configmap.
@@ -52,7 +48,7 @@ Kafka broker address is configurable. [locust-config-cm](locust/locust-config-cm
 that comma separated kafka node addresses will be stored in `KAFKA_BROKERS` field (the default being "kafka:9092").
 You'll need update it when connecting to some other cluster.
 
-The topic name can be also changed. `OUTPUT_TOPIC` is used for this purpose ("test-topic" is the default).
+The topic name can be also changed. `OUTPUT_TOPIC` is used for this purpose ("test" is the default).
 
 QUIET_MODE's default value is true. The code is written in such a way, that when quiet mode is off,
 atomic results (individual request info) will be logged to stdout.
