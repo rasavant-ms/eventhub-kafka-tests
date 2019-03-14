@@ -1,3 +1,6 @@
+Old README.md file obtained from https://github.com/karol-brejna-i/locust-experiments.git 
+[TODO] Edit
+
 I wanted the image to:
 * use Python 3
 * use the latest version of Locust
