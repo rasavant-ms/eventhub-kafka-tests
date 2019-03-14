@@ -1,4 +1,5 @@
-README.md obtained from https://github.com/karol-brejna-i/locust-experiments.git - updated a bit with changes
+README.md obtained from https://github.com/karol-brejna-i/locust-experiments.git
+[TODO] Needs to be updated
 
 ## Setting up Kafka
 This descriptors rely on Debezium images for Kafka and Zookeeper.
